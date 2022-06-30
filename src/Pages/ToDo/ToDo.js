@@ -1,6 +1,8 @@
 import { format } from 'date-fns';
 import React, { useEffect, useState } from 'react';
 import { useForm } from "react-hook-form";
+import Task from '../Task/Task';
+
 
 
 const ToDo = ({ date }) => {
@@ -11,7 +13,7 @@ const ToDo = ({ date }) => {
         const task = {
             taskName: data.name,
             taskDetail: data.detail,
-            taskData: data.date
+            taskDate: data.date
         }
         fetch('http://localhost:5000/task', {
             method: 'POST',
@@ -26,12 +28,10 @@ const ToDo = ({ date }) => {
     useEffect(() => {
 
         fetch('http://localhost:5000/task', {
-            method: 'GET',
-            headers: { 'content-type': 'application/json' },
-
+            method: 'GET'
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => setData(data))
 
     }, [])
 
@@ -39,20 +39,12 @@ const ToDo = ({ date }) => {
         <div class="hero">
             <div class="hero-content flex-col lg:flex-row">
                 <div class="text-center lg:text-left">
-                    <div class="card w-96 bg-base-100 flex-row items-center">
-                        <div>
-                            <input type="radio" name="radio-2" class="radio radio-primary" />
-                        </div>
-                        <div class="card-body text-left">
-                            <h2 class="card-title">{data.taskName}</h2>
-                            <p className=''>{data.taskDetail}</p>
-                            <p>{data.taskData}</p>
-                        </div>
-                        <div class="card-actions justify-end">
-                            <button class="btn btn-primary">Edit Task</button>
-                        </div>
-                    </div>
+                    {
+                        data.map(task => <Task key={task._id} task={task}></Task>)
+
+                    }
                 </div>
+
                 <div class="card flex-shrink-0 w-full max-w-sm">
                     <h2 className='text-4xl font-bold mx-auto'>Add Task</h2>
                     <div class="card-body">
