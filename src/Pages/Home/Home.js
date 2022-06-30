@@ -3,12 +3,12 @@ import Calendar from '../Calendar/Calendar';
 import ToDo from '../ToDo/ToDo';
 
 const Home = () => {
-    const [data, setDate] = useState(new Date())
+    const [date, setDate] = useState(new Date())
 
     return (
         <div>
-            <Calendar data={data} setDate={setDate} />
-            <ToDo data={data} />
+            <Calendar date={date} setDate={setDate} />
+            <ToDo date={date} />
         </div>
     );
 };

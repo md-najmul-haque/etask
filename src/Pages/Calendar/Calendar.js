@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import task from '../../assets/task.jpg'
 import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
 import { format } from 'date-fns';
 
-const Calendar = ({ data, setDate }) => {
+const Calendar = ({ date, setDate }) => {
 
     return (
         <div class="hero min-h-screen">
@@ -16,10 +16,10 @@ const Calendar = ({ data, setDate }) => {
                 <div className='flex-1 mx-auto'>
                     <DayPicker
                         mode="single"
-                        selected={data}
+                        selected={date}
                         onSelect={setDate}
                     />
-                    <p className='ml-5'>You picked {format(data, 'PP')}.</p>;
+                    <p className='ml-5'>You picked {format(date, 'PP')}.</p>;
                 </div>
             </div>
         </div>
