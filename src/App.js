@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/completedTasks" element={<CompletedTasks />} />
-        <Route path="/todo" element={<ToDo />} />
+
 
       </Routes>
       <Footer />
