@@ -7,6 +7,7 @@ const Task = ({ task }) => {
 
         <div class="card w-96 bg-base-100 flex-row items-center">
 
+
             <div>
                 <input type="radio" name="radio-2" class="radio radio-primary" />
             </div>
@@ -15,11 +16,11 @@ const Task = ({ task }) => {
                 <p className=''>{taskDetail}</p>
                 <p>{taskDate}</p>
             </div>
-
             <div class="card-actions justify-end">
                 <button class="btn btn-primary">Edit Task</button>
             </div>
         </div>
+
 
     );
 };
