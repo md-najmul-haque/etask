@@ -3,10 +3,11 @@ import { useForm } from "react-hook-form";
 import { useQuery } from 'react-query'
 import Loading from '../Shared/Loading';
 import { toast } from 'react-toastify';
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 
 const UpdatedTask = () => {
     const { id } = useParams();
+    const navigate = useNavigate()
 
     const { data: task, isLoading } = useQuery('task', () =>
         fetch(`http://localhost:5000/task/${id}`, {
@@ -34,6 +35,7 @@ const UpdatedTask = () => {
                     toast.error('Sorry! Your task is not updated. Please try again later.')
                 }
             })
+        navigate('/')
     };
 
     if (isLoading) {
