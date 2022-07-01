@@ -10,7 +10,7 @@ const UpdatedTask = () => {
     const navigate = useNavigate()
 
     const { data: task, isLoading } = useQuery('task', () =>
-        fetch(`http://localhost:5000/task/${id}`, {
+        fetch(`https://nameless-garden-92421.herokuapp.com/task/${id}`, {
             method: 'GET'
         })
             .then(res => res.json())
@@ -22,7 +22,7 @@ const UpdatedTask = () => {
             taskName: data.name,
             taskDetail: data.detail,
         }
-        fetch(`http://localhost:5000/updatedTask/${id}`, {
+        fetch(`https://nameless-garden-92421.herokuapp.com/updatedTask/${id}`, {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(updatedTask)
