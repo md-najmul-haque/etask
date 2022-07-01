@@ -10,7 +10,7 @@ const Task = ({ task }) => {
             completed: true
         }
 
-        fetch(`http://localhost:5000/task/${id}`, {
+        fetch(`https://nameless-garden-92421.herokuapp.com/task/${id}`, {
             method: 'PATCH',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(completed)

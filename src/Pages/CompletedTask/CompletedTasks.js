@@ -6,7 +6,7 @@ import Loading from '../Shared/Loading';
 const CompletedTasks = () => {
 
     const { data: completed, isLoading, refetch } = useQuery('completed', () =>
-        fetch('http://localhost:5000/completedTask')
+        fetch('https://nameless-garden-92421.herokuapp.com/completedTask')
             .then(res => res.json())
 
     )

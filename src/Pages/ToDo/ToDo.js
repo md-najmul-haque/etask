@@ -16,7 +16,7 @@ const ToDo = ({ date }) => {
             taskDate: data.date,
             completed: false
         }
-        fetch('http://localhost:5000/task', {
+        fetch('https://nameless-garden-92421.herokuapp.com/task', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(task)
@@ -28,7 +28,7 @@ const ToDo = ({ date }) => {
     };
 
     const { data: pendingTask, isLoading, refetch } = useQuery('pendingTask', () =>
-        fetch('http://localhost:5000/task', {
+        fetch('https://nameless-garden-92421.herokuapp.com/task', {
             method: 'GET'
         })
             .then(res => res.json())
