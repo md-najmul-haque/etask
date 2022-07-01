@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import Task from '../Task/Task';
 import { useQuery } from 'react-query'
 import Loading from '../Shared/Loading';
+import { toast } from 'react-toastify';
 
 const ToDo = ({ date }) => {
 
@@ -22,7 +23,13 @@ const ToDo = ({ date }) => {
             body: JSON.stringify(task)
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                if (data.acknowledged === true) {
+                    toast.success('Your new task is successfully added.')
+                } else {
+                    toast.error('Sorry! Your task is not added. Please try again later.')
+                }
+            })
 
 
     };
