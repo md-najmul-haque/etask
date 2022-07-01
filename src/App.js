@@ -1,11 +1,10 @@
 import { Routes, Route } from "react-router-dom";
 import './App.css';
-import Calendar from "./Pages/Calendar/Calendar";
-import CompletedTasks from "./Pages/CompleteTask/CompletedTasks";
+import CompletedTasks from "./Pages/CompletedTask/CompletedTasks";
 import Home from "./Pages/Home/Home";
 import Footer from "./Pages/Shared/Footer";
 import Navbar from "./Pages/Shared/Navbar";
-import ToDo from "./Pages/ToDo/ToDo";
+
 
 function App() {
   return (

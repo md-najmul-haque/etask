@@ -6,7 +6,7 @@ const Footer = () => {
     const year = new Date().getFullYear()
     return (
 
-        <footer className="footer bg-black footer-center text-white py-10">
+        <footer className="footer footer-center text-black py-10">
             <div className='grid grid-flow-col gap-4 pb-0 mb-0 text-3xl' >
                 <a href="https://www.linkedin.com/in/md-najmul-haque/" rel="noreferrer" role='button' target='_blank'><BsLinkedin /></a>
                 <a href="https://github.com/md-najmul-haque" rel="noreferrer" role='button' target='_blank'><BsGithub /></a>

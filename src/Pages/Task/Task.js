@@ -1,15 +1,31 @@
 import React from 'react';
 
 const Task = ({ task }) => {
-    console.log(task);
-    const { taskName, taskDetail, taskDate } = task
+
+    const { _id, taskName, taskDetail, taskDate } = task
+
+    const handleRadioButton = (id) => {
+
+        const completed = {
+            completed: true
+        }
+
+        fetch(`http://localhost:5000/task/${id}`, {
+            method: 'PATCH',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(completed)
+        })
+            .then(res => res.json())
+            .then(data => console.log(data))
+
+    }
+
     return (
 
         <div class="card w-96 bg-base-100 flex-row items-center">
 
-
             <div>
-                <input type="radio" name="radio-2" class="radio radio-primary" />
+                <input type="radio" onChange={() => handleRadioButton(_id)} name="radio-2" class="radio radio-primary" />
             </div>
             <div class="card-body text-left">
                 <h2 class="card-title">{taskName}</h2>
