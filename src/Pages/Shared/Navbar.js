@@ -1,15 +1,16 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
 
 const Navbar = () => {
     const menuItem = <>
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/calendar'>Calendar</Link></li>
-        <li><Link to='/todo'>To Do</Link></li>
-        <li><Link to='/completedTask'>Completed Tasks</Link></li>
+        <li><HashLink to='/'>Home</HashLink></li>
+        <li><HashLink to='/#calendar'>Calendar</HashLink></li>
+        <li><HashLink to='/#todo'>To Do</HashLink></li>
+        <li><HashLink to='/#completedTask'>Completed Tasks</HashLink></li>
     </>
     return (
-        <div class="navbar bg-base-100">
+        <div class="navbar sticky top-0">
             <div class="navbar-start">
                 <div class="dropdown">
                     <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -19,7 +20,7 @@ const Navbar = () => {
                         {menuItem}
                     </ul>
                 </div>
-                <Link to='' class="btn btn-ghost normal-case text-xl">eTask</Link>
+                <Link to='/' class="btn btn-ghost normal-case text-xl">eTask</Link>
             </div>
             <div class="navbar-end hidden lg:flex">
                 <ul class="menu menu-horizontal p-0">

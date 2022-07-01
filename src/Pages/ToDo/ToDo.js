@@ -17,7 +17,7 @@ const ToDo = ({ date }) => {
             taskDate: data.date,
             completed: false
         }
-        fetch('https://nameless-garden-92421.herokuapp.com/task', {
+        fetch('http://localhost:5000/task', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(task)
@@ -35,7 +35,7 @@ const ToDo = ({ date }) => {
     };
 
     const { data: pendingTask, isLoading, refetch } = useQuery('pendingTask', () =>
-        fetch('https://nameless-garden-92421.herokuapp.com/task', {
+        fetch('http://localhost:5000/task', {
             method: 'GET'
         })
             .then(res => res.json())
@@ -49,11 +49,11 @@ const ToDo = ({ date }) => {
 
     return (
 
-        <div className='mx-auto lg:pl-20'>
+        <div id='todo' className='mx-auto lg:pl-20'>
             <h1 className='text-4xl font-bold text-center'>Your Pending Task</h1>
 
             <div class="py-10">
-                <div class="flex flex-col-reverse lg:flex-row gap-x-4">
+                <div class="flex flex-col-reverse lg:flex-row justify-center gap-x-4">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4">
                         {
                             pendingTask.map(task => <Task key={task._id} task={task}></Task>)

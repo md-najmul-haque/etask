@@ -6,6 +6,7 @@ import Footer from "./Pages/Shared/Footer";
 import Navbar from "./Pages/Shared/Navbar";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import UpdatedTask from "./Pages/UpdatedTask/UpdatedTask";
 
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/completedTasks" element={<CompletedTasks />} />
+        <Route path="/updatedTask/:id" element={<UpdatedTask />} />
       </Routes>
       <Footer />
       <ToastContainer />

@@ -17,7 +17,7 @@ const CompletedTasks = () => {
     }
 
     return (
-        <div className=''>
+        <div id='completedTask'>
             <h1 className='text-4xl font-bold text-center'>Completed Task</h1>
             <div className='grid grid-cols-1 md:grid-col-2 lg:grid-cols-3 py-6'>
                 {

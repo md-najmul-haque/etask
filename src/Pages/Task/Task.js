@@ -1,5 +1,6 @@
 import React from 'react';
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom'
 
 const Task = ({ task }) => {
 
@@ -37,9 +38,9 @@ const Task = ({ task }) => {
                 <p>{taskDate}</p>
             </div>
             <div class="card-actions justify-end">
-                <button class="btn btn-primary">Edit Task</button>
+                <Link to={`/updatedTask/${_id}`} class="btn btn-primary">Edit Task</Link>
             </div>
-        </div>
+        </div >
 
 
     );
