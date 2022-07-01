@@ -1,4 +1,5 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 
 const Task = ({ task }) => {
 
@@ -16,7 +17,11 @@ const Task = ({ task }) => {
             body: JSON.stringify(completed)
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                if (data.$set.completed === true) {
+                    toast.success('Congrats! You have completed this task successfully')
+                }
+            })
 
     }
 
