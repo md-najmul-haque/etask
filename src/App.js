@@ -4,6 +4,8 @@ import CompletedTasks from "./Pages/CompletedTask/CompletedTasks";
 import Home from "./Pages/Home/Home";
 import Footer from "./Pages/Shared/Footer";
 import Navbar from "./Pages/Shared/Navbar";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
@@ -13,10 +15,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/completedTasks" element={<CompletedTasks />} />
-
-
       </Routes>
       <Footer />
+      <ToastContainer />
     </div>
   );
 }
