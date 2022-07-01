@@ -3,7 +3,7 @@ import React from 'react';
 const CompletedTaskDetail = ({ completedTask }) => {
     const { taskName, taskDetail, taskDate } = completedTask
     return (
-        <div>
+        <div className='mx-auto'>
             <div class="card w-96 bg-base-100 flex-row items-center">
 
                 <div>
