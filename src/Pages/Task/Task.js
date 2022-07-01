@@ -27,18 +27,18 @@ const Task = ({ task }) => {
     }
 
     return (
-        <div class="card w-96 flex-row items-center px-5 mx-auto">
+        <div className="card w-96 flex-row items-center px-5 mx-auto">
 
             <div>
-                <input type="radio" onChange={() => handleRadioButton(_id)} name="radio-2" class="radio radio-primary" />
+                <input type="radio" onChange={() => handleRadioButton(_id)} name="radio-2" className="radio radio-primary" />
             </div>
-            <div class="card-body text-left">
-                <h2 class="card-title">{taskName}</h2>
+            <div className="card-body text-left">
+                <h2 className="card-title">{taskName}</h2>
                 <p className=''>{taskDetail}</p>
                 <p>{taskDate}</p>
             </div>
-            <div class="card-actions justify-end">
-                <Link to={`/updatedTask/${_id}`} class="btn btn-primary">Edit Task</Link>
+            <div className="card-actions justify-end">
+                <Link to={`/updatedTask/${_id}`} className="btn btn-primary">Edit Task</Link>
             </div>
         </div >
 

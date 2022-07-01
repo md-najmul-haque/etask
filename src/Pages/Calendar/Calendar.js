@@ -7,8 +7,8 @@ import { format } from 'date-fns';
 const Calendar = ({ date, setDate }) => {
 
     return (
-        <div id='calendar' class="hero min-h-screen">
-            <div class="hero-content flex-col lg:flex-row">
+        <div id='calendar' className="hero min-h-screen">
+            <div className="hero-content flex-col lg:flex-row">
                 <div className='flex-1 mx-auto'>
                     <img src={task} alt='' />
                 </div>
