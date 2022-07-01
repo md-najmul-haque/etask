@@ -17,9 +17,9 @@ const CompletedTasks = () => {
     }
 
     return (
-        <div className='mx-auto'>
+        <div className=''>
             <h1 className='text-4xl font-bold text-center'>Completed Task</h1>
-            <div className='grid grid-cols-1 md:grid-col-2 lg:grid-cols-3'>
+            <div className='grid grid-cols-1 md:grid-col-2 lg:grid-cols-3 py-6'>
                 {
                     completed.map(completedTask => <CompletedTaskDetail key={completedTask._id} completedTask={completedTask} />)
                 }

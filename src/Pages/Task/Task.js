@@ -26,8 +26,7 @@ const Task = ({ task }) => {
     }
 
     return (
-
-        <div class="card w-96 bg-base-100 flex-row items-center">
+        <div class="card w-96 flex-row items-center px-5 mx-auto">
 
             <div>
                 <input type="radio" onChange={() => handleRadioButton(_id)} name="radio-2" class="radio radio-primary" />

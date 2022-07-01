@@ -48,19 +48,20 @@ const ToDo = ({ date }) => {
     }
 
     return (
-        <div>
+
+        <div className='mx-auto lg:pl-20'>
             <h1 className='text-4xl font-bold text-center'>Your Pending Task</h1>
 
-            <div class="hero">
-                <div class="hero-content flex-col lg:flex-row">
-                    <div class="text-center lg:text-left">
+            <div class="py-10">
+                <div class="flex flex-col-reverse lg:flex-row gap-x-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4">
                         {
                             pendingTask.map(task => <Task key={task._id} task={task}></Task>)
 
                         }
                     </div>
 
-                    <div class="card flex-shrink-0 w-full max-w-sm">
+                    <div class="card flex-shrink-0 justify-end w-full max-w-lg">
                         <h2 className='text-4xl font-semibold mx-auto'>Add Task</h2>
                         <div class="card-body">
 
@@ -77,7 +78,7 @@ const ToDo = ({ date }) => {
                                     <input class="input input-bordered" value={format(date, 'PP')} {...register("date")} />
                                 </div>
                                 <div class="form-control mt-6">
-                                    <input class="btn btn-primary" type="submit" />
+                                    <input class="btn btn-primary" type="submit" value='Add Task' />
                                 </div>
                             </form>
                         </div>
@@ -85,6 +86,7 @@ const ToDo = ({ date }) => {
                 </div>
             </div >
         </div>
+
     );
 };
 

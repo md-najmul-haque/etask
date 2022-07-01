@@ -4,7 +4,7 @@ const CompletedTaskDetail = ({ completedTask }) => {
     const { taskName, taskDetail, taskDate } = completedTask
     return (
         <div className='mx-auto'>
-            <div class="card w-96 bg-base-100 flex-row items-center">
+            <div class="card w-96 flex-row items-center px-5">
 
                 <div>
                     <input type="radio" name="radio-2" class="radio radio-primary" disabled />
