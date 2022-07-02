@@ -13,7 +13,7 @@ const Calendar = ({ date, setDate }) => {
                     <img src={task} alt='' />
                 </div>
 
-                <div className='flex-1 mx-auto'>
+                <div className='flex-1 text-black mx-auto'>
                     <DayPicker
                         mode="single"
                         selected={date}

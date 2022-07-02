@@ -67,15 +67,15 @@ const ToDo = ({ date }) => {
 
                             <form onSubmit={handleSubmit(onSubmit)}>
                                 <div className="form-control mb-2">
-                                    <input placeholder="Task Name" className="input input-bordered" {...register("name", { required: true, maxLength: 20 })} />
+                                    <input placeholder="Task Name" className="input bg-white input-bordered" {...register("name", { required: true, maxLength: 20 })} />
                                 </div>
 
                                 <div className="form-control mb-2">
-                                    <input placeholder="Task Description" className="input input-bordered" {...register("detail", { required: true, maxLength: 100 })} />
+                                    <input placeholder="Task Description" className="input bg-white input-bordered" {...register("detail", { required: true, maxLength: 100 })} />
                                 </div>
 
                                 <div className="form-control mb-2">
-                                    <input className="input input-bordered" value={format(date, 'PP')} {...register("date")} />
+                                    <input className="input bg-white input-bordered" value={format(date, 'PP')} {...register("date")} />
                                 </div>
                                 <div className="form-control mt-6">
                                     <input className="btn btn-accent" type="submit" value='Add Task' />
