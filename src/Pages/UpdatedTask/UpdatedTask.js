@@ -58,7 +58,7 @@ const UpdatedTask = () => {
                         </div>
 
                         <div className="form-control mt-6">
-                            <input className="btn btn-primary" type="submit" value='Update Task' />
+                            <input className="btn btn-accent" type="submit" value='Update Task' />
                         </div>
                     </form>
                 </div>

@@ -30,7 +30,7 @@ const Task = ({ task }) => {
         <div className="card w-96 flex-row items-center px-5 mx-auto">
 
             <div>
-                <input type="radio" onChange={() => handleRadioButton(_id)} name="radio-2" className="radio radio-primary" />
+                <input type="radio" onChange={() => handleRadioButton(_id)} name="radio-2" className="radio radio-accent" />
             </div>
             <div className="card-body text-left">
                 <h2 className="card-title">{taskName}</h2>
@@ -38,7 +38,7 @@ const Task = ({ task }) => {
                 <p>{taskDate}</p>
             </div>
             <div className="card-actions justify-end">
-                <Link to={`/updatedTask/${_id}`} className="btn btn-primary">Edit Task</Link>
+                <Link to={`/updatedTask/${_id}`} className="btn btn-accent">Edit Task</Link>
             </div>
         </div >
 

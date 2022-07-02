@@ -78,7 +78,7 @@ const ToDo = ({ date }) => {
                                     <input className="input input-bordered" value={format(date, 'PP')} {...register("date")} />
                                 </div>
                                 <div className="form-control mt-6">
-                                    <input className="btn btn-primary" type="submit" value='Add Task' />
+                                    <input className="btn btn-accent" type="submit" value='Add Task' />
                                 </div>
                             </form>
                         </div>
