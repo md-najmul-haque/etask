@@ -1,13 +1,33 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
+import auth from '../../firebase.init';
+import Loading from './Loading';
 
 const Navbar = () => {
+
+    const [user, loading] = useAuthState(auth)
+
+
+    const handleSignOut = () => {
+        signOut(auth);
+    }
+
+
+    if (loading) {
+        return <Loading />
+    }
+
     const menuItem = <>
         <li><HashLink to='/'>Home</HashLink></li>
         <li><HashLink to='/#calendar'>Calendar</HashLink></li>
         <li><HashLink to='/#todo'>To Do</HashLink></li>
         <li><HashLink to='/#completedTask'>Completed Tasks</HashLink></li>
+        {
+            user ? <li><HashLink onClick={handleSignOut} to='/login'>Sign Out</HashLink></li> : <li><HashLink to='/login'>Login</HashLink></li>
+        }
     </>
     return (
         <div className="navbar bg-white sticky top-0 z-50">
